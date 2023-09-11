@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block content %}
+{% for post in posts %}
+<div>
+  Location: {{post.location}} <br>
+  Host: {{post.host}} <br>
+  Accomodates : {{post.accomodates}} <br>
+  {{post.description}}
+</div>
+{% endfor %}
+
+{% endblock %}
