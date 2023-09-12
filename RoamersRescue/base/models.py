@@ -24,6 +24,7 @@ class Post(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
+    location = models.CharField(max_length=100, null=True)
     accomodates = models.CharField(max_length=10)
     description = models.TextField(null=True)
     updated = models.DateTimeField(auto_now=True)
