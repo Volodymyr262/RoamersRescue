@@ -56,7 +56,7 @@ def home(request):
     posts = Post.objects.all()
     return render(request, 'home.html', {'posts': posts})
 
-
+#comment
 def loginUser(request):
     page = 'login'
     if request.user.is_authenticated:
