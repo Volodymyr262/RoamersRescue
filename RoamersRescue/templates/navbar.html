@@ -12,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="{% url 'login-user' %}">Login</a>
-        <a class="nav-link" href="{% url 'register-user' %}">Signup</a>
+        <a class="nav-link" href="{% url 'profile' request.user.id %}">Profile</a>
         <a class="nav-link" href="{% url 'logout-user' %}">Logout</a>
       </div>
     </div>

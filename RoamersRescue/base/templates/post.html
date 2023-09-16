@@ -4,7 +4,7 @@
 
 <div>
   Location: {{post.location}} <br>
-  Host: {{post.host.username}} <br>
+  Host: <a href="{% url 'profile' post.host.id %}">{{post.host.username}}</a> <br>
   Accomodates : {{post.accomodates}} <br>
     {{post.description}} <br>
 </div>

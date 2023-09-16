@@ -1,17 +1,14 @@
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
-from .models import Post, Topic
+from .models import Post, User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.contrib.auth.decorators import login_required
 from .forms import MyUserCreationForm
-from django.contrib.auth.models import User
-from verify_email.email_handler import send_verification_email
 from .tokens import account_activation_token
 
 
@@ -104,3 +101,8 @@ def registerPage(request):
         else:
             messages.error(request, 'An error occurred during registration')
     return render(request, 'login_register.html', {'form':form})
+
+
+def profile(request, pk):
+    user = User.objects.get(id=pk)
+    return render(request, 'profile.html', {'user': user})
