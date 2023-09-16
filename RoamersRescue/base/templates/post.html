@@ -7,7 +7,10 @@
   Host: {{post.host.username}} <br>
   Accomodates : {{post.accomodates}} <br>
     {{post.description}} <br>
-
 </div>
+{% if request.user == post.host %}
+
+<a class="btn btn--main btn--pill" href="{% url 'post' post.id %}">See applications</a>
+{% endif %}
 
 {% endblock %}

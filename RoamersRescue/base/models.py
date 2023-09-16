@@ -44,3 +44,10 @@ class Review(models.Model):
                                     MinValueValidator(1, message="you can give a host 1-5 stars"),
                                     MaxValueValidator(5, message="you can give a host 1-5 stars")
                                 ])
+
+
+class Application(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=50)
+    description = models.TextField(null=True)
+    phone_nuumber = models.CharField(max_length=20)
