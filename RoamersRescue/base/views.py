@@ -84,7 +84,6 @@ def loginUser(request):
 @login_required(login_url='login-user')
 def logoutUser(request):
     logout(request)
-    redirect('login-user')
     return redirect('home')
 
 
