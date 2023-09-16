@@ -1,13 +1,19 @@
 {% extends 'main.html' %}
 
 {% block content %}
+ <main class="layout layout--2">
+      <div class="container">
+
 {% for post in posts %}
 <div>
   Location: {{post.location}} <br>
   Host: {{post.host}} <br>
   Accomodates : {{post.accomodates}} <br>
-  {{post.description}}
 </div>
+        <div>
+          <a class="btn btn--main btn--pill" href="{% url 'post' post.id %}">See details</a>
+        </div>
 {% endfor %}
-
+      </div>
+ </main>
 {% endblock %}

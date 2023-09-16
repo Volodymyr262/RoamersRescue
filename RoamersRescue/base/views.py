@@ -56,7 +56,12 @@ def home(request):
     posts = Post.objects.all()
     return render(request, 'home.html', {'posts': posts})
 
-#comment
+
+def postView(request, pk):
+    post = Post.objects.get(id=pk)
+    return render(request, 'post.html', {'post': post})
+
+
 def loginUser(request):
     page = 'login'
     if request.user.is_authenticated:
@@ -82,6 +87,7 @@ def loginUser(request):
 @login_required(login_url='login-user')
 def logoutUser(request):
     logout(request)
+    redirect('login-user')
     return redirect('home')
 
 
