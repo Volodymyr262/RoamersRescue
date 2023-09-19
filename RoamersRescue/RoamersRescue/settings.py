@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'verify_email.apps.VerifyEmailConfig',
 
+    #google auth
     'allauth.socialaccount.providers.google',
     'allauth',
     'allauth.account',
