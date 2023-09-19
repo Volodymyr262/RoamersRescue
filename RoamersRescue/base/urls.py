@@ -12,5 +12,5 @@ path('activate/<uidb64>/<token>', views.activate, name='activate'),
 path('post/<str:pk>/', views.postView, name='post'),
 
 path('profile/<str:pk>/', views.profile, name='profile'),
-path('accounts/', include('allauth.urls')),
+
 ]
